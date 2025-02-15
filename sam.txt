@@ -1,0 +1,13 @@
+i am sam before 1st commit
+i am sam after first commit
+i am new feature commit here 2
+
+
+i am main code of conflict
+
+
+
+
+
+i am learning git
+
