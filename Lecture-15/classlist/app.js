@@ -29,7 +29,8 @@ let allId = document.querySelectorAll('#samm')
 
 // ---------------------------------------------
 
-
+// document.querySelector('#sam').innerHTML //getter
+// document.querySelector('#sam').innerHTML = "i am setter" //setter
 
 
 
