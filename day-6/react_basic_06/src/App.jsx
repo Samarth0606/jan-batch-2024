@@ -1,4 +1,5 @@
 import Fetching from "./components/Fetching"
+import Monkey from "./components/Monkey"
 import Timer from "./components/Timer"
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
     <div>
       <h1>Hello</h1>
       {/* <Fetching /> */}
-      <Timer />
+      {/* <Timer /> */}
+      <Monkey lolipop="namaste" />
 
     </div>
   )
