@@ -9,9 +9,9 @@ function RestaurantCard({restArr}) {
           <img className="w-58 h-42 rounded-xl" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${restDetail.info.cloudinaryImageId}`} alt="" />
           <h1 className="px-2 font-bold">{restDetail.info.name}</h1>
           <span className="px-2 font-bold">{restDetail.info.avgRating}</span>
-          <span className="px-2 mx-3">50-55 mins</span>
+          <span className="px-2 mx-3">{restDetail.info.sla.slaString}</span>
           <p className="px-2">{restDetail.info.cuisines[0]}</p>
-          <p className="px-2">{restDetail.info.sla.slaString}</p>
+          <p className="px-2">{restDetail.info.locality}</p>
         </div>
       )
     })
