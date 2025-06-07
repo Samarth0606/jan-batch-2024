@@ -8,6 +8,8 @@ import Help from './components/Help.jsx'
 import Offers from './components/Offers.jsx'
 import Body from './components/Body.jsx'
 import Error from './components/Error.jsx'
+import RestaurantDetails from './components/RestaurantDetails.jsx'
+import RealTimeClock from './components/RealTimeClock.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const appRouter = createBrowserRouter([
       {
         path:"/signin",
         element: <Signin />
+      },
+      {
+        path:"/restaurant/:id",
+        element: <RestaurantDetails />
+      },
+      {
+        path:"/clock",
+        element: <RealTimeClock />
       }
     ]
   }
