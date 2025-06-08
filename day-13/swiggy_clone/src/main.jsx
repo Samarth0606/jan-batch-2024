@@ -10,6 +10,7 @@ import Body from './components/Body.jsx'
 import Error from './components/Error.jsx'
 import RestaurantDetails from './components/RestaurantDetails.jsx'
 import RealTimeClock from './components/RealTimeClock.jsx'
+import Cart from './components/Cart.jsx'
 
 const appRouter = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/clock",
         element: <RealTimeClock />
+      },
+      {
+        path:"/cart",
+        element: <Cart />
       }
     ]
   }

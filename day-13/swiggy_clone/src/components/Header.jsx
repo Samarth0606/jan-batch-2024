@@ -5,9 +5,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { Link } from 'react-router-dom';
-
+import {useSelector} from "react-redux";
 
 function Header() {
+
+    const cartItems = useSelector((store)=> store.cart.items)
+
   return (
     <div className='bg-white dark:bg-gray-900 text-white' >
         <nav className="flex justify-between items-center px-12">
@@ -31,7 +34,7 @@ function Header() {
                 </div>
                 <div className='flex m-4'>
                     <span className='mt-3'> <IoCartOutline /> </span>
-                    <Link to="/" className='p-2'>Cart</Link>
+                    <Link to="/cart" className='p-2'>Cart {cartItems.length}</Link>
                 </div>
             </ul>
         </nav>
