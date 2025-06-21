@@ -1,7 +1,7 @@
 import express from "express";
-const app = express();
+const app = express(); //entire application
 import mongoose from 'mongoose';
-
+import {restaurantRoutes} from './routes/restaurant.routes.js'
 
 // mongoose.connect('mongodb://127.0.0.1:27017/maverick') //own localhost/machine
 mongoose.connect('mongodb+srv://samarthvohraindia:jzCGJhI6j6MRHtQJ@cluster0.tvis7av.mongodb.net/') //cloud atlas
@@ -12,11 +12,16 @@ mongoose.connect('mongodb+srv://samarthvohraindia:jzCGJhI6j6MRHtQJ@cluster0.tvis
     console.log("DB NOT CONNECTED" , err);
 })
 
+app.get('/' , (req,res)=>{
+    console.log("welcome");
+    
+    res.send("welcome")
+})
+
+restaurantRoutes(app)
 
 
-
-
-const PORT = 5000;
+const PORT = 5050;
 app.listen(PORT, ()=>{
     console.log(`server is running at port : ${PORT}`);
 })
