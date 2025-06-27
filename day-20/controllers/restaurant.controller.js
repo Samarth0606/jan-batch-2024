@@ -6,7 +6,7 @@ export async function createRestaurant(req,res){
         // console.log(req.body , "req");
         // let {name,rating,cuisines,deliveryTime,imgUrl} = req.body;
         const newRestaurant = await RestaurantModel.create(req.body);
-        res.status(201).json({"newRestaurant" : newRestaurant})
+        return res.status(201).json({"newRestaurant" : newRestaurant})
     }
     catch(err){
         return res.status(500).json({error: err.message})
@@ -15,7 +15,10 @@ export async function createRestaurant(req,res){
 
 export async function fetchRestaurant(req,res){
     try{
-        const data = await RestaurantModel.find();
+        const data = await RestaurantModel.find({});
+        console.log(data , "data");
+        console.log(req.user , "req.user");
+        
         // res.status(200).send("data we got")
         return res.status(200).json(data)
     }

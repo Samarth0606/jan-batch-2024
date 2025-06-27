@@ -3,7 +3,9 @@ const app = express(); //entire application
 import mongoose from 'mongoose';
 import {restaurantRoutes} from './routes/restaurant.routes.js'
 import {userRoutes} from './routes/user.routes.js'
+import cors from 'cors';
 
+ 
 // mongoose.connect('mongodb://127.0.0.1:27017/maverick') //own localhost/machine
 mongoose.connect('mongodb+srv://samarthvohraindia:jzCGJhI6j6MRHtQJ@cluster0.tvis7av.mongodb.net/') //cloud atlas
 .then(()=>{
@@ -19,6 +21,7 @@ app.get('/' , (req,res)=>{
     res.send("welcome")
 })
 
+app.use(cors()) //middleware for integration
 app.use(express.json()) //middleware
 
 restaurantRoutes(app)

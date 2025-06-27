@@ -10,7 +10,7 @@ export function register(req,res){
                 return res.status(400).json({error: "User already exist"})
             }
             else{
-                let newpassword = bcrypt.hashSync(password, 10);
+                let newpassword = bcrypt.hashSync(password, 10); //blocking
                 UserModel.create({fullName,email,password:newpassword})
                 .then((data)=>{
                     console.log(data , "data");
@@ -30,6 +30,7 @@ export function login(req,res){
         UserModel.findOne({email}).then((data)=>{
             if(!data){
                 return res.status(404).json({message: "User is not registered"})
+                // return res.redirect('/login')
             }
 
             let validPassword = bcrypt.compareSync(password, data.password);
@@ -37,7 +38,7 @@ export function login(req,res){
                 return res.status(404).json({message: "Invalid password"})
             }
 
-            const token = jwt.sign({id:data._id}, 'secretKey' , {expiresIn: "1m"});
+            const token = jwt.sign({id:data._id}, 'secretKey' , {expiresIn: "1d"});
             // console.log(token , "token");
             
 
