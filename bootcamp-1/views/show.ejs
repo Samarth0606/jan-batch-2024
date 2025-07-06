@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Name: <%=pp.name%></h1>
+    <h1>Price: <%=pp.price%></h1>
+    <img width="100px" height="100px" src="<%=pp.imgUrl%>" alt="">
+    <h1>Desc: <%=pp.desc%></h1>
+
+    <h1>Add Review</h1>
+
+   <form action="/products/<%=pp._id%>/review" method="POST">
+        <h2>rating</h2>
+        <input type="range" min="0" max="5" name="rating">
+        <h2>Comment</h2>
+        <textarea name="comment" id=""></textarea>
+        <button>Add Review</button>
+   </form>
+
+   <% for(let item of pp.reviews){ %>
+        <h1><%= item.rating %></h1>
+        <h1><%= item.comment %></h1>
+   <% } %>
+
+
+</body>
+</html>
